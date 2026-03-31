@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/03/31 20:37:53 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/03/31 23:19:38 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdbool.h>
 # include "42_0_libft/libft.h"
 // # include "libft/source_libft/libft.h"
-// # include "libft/ft_printf.h"ß
+// # include "libft/ft_printf.h"
 
 int			count_tokens(char **s, int arg_total);
 long long	*make_array(char **arg_value, int arg_total);
