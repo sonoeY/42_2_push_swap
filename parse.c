@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/03/24 02:26:53 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/03/31 20:40:18 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ long long	*parse_args(char **arg_value, int arg_total)
 		while (tokens[j])
 		{
 			if (!is_numeric_token(tokens))
-				return (free_all_return(tokens, nums));
+				return (free_all(tokens, nums));
 			nums[num_i] = atol(tokens[j]);
 			if (nums[num_i] > INT_MAX || nums[num_i] < INT_MIN)
 				return (free_all(tokens, nums));
