@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/06 17:37:42 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/06 17:50:59 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,8 @@ long long	*parse_args(char **arg_value, int arg_total)
 	while (tokens_i < (size_t)arg_total)
 	{
 		tokens = ft_split(arg_value[tokens_i], ' ');
-		if (!tokens)
-			return (free_all(tokens, nums));
 		j = 0;
-		if (!tokens[j])
+		if (!tokens || !tokens[j])
 			return (free_all(tokens, nums));
 		while (tokens[j])
 		{
