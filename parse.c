@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/03/31 20:40:18 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/06 17:37:42 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ long long	*parse_args(char **arg_value, int arg_total)
 		if (!tokens)
 			return (free_all(tokens, nums));
 		j = 0;
+		if (!tokens[j])
+			return (free_all(tokens, nums));
 		while (tokens[j])
 		{
 			if (!is_numeric_token(tokens))
