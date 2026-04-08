@@ -4,7 +4,7 @@ NAME		= push_swap
 LIB_PS		= libft_ps.a
 # MAIN = main.c
 MAIN		= parse.c
-SRCS		= parse_convert_str.c parse_make_array.c utils.c
+SRCS		= atol.c parse_make_array.c utils.c
 OBJS		= $(SRCS:.c=.o)
 CC			= cc
 CFLAGS = -Wall -Wextra -Werror
