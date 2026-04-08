@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/08 16:12:41 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/08 17:04:20 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,10 @@ long long	ft_atol_ps(const char *nptr)
 		i++;
 	}
 	return (sign * num);
+}
+
+int	exit_error(int fd)
+{
+	write(fd, "Error\n", 6);
+	return (1);
 }

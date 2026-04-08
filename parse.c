@@ -6,12 +6,11 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/08 16:12:44 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/08 16:39:14 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	free_tokens(char **tokens);
 static void	free_lst(t_list **lst);
@@ -54,43 +53,6 @@ t_list	*parse_args(char **arg_value, int arg_total, t_list **stack_a)
 		return (NULL);
 	}
 	return (*stack_a);
-}
-
-//tmp
-void print_forward(t_list *head)
-{
-    while (head)
-    {
-        printf("%d ", head->data);
-        head = head->next;
-    }
-    printf("\n");
-}
-
-int	main(int argc, char **argv)
-{
-	int			num_len;
-	t_list		*stack_a = NULL;
-
-	if (argc < 2)
-	{
-		printf("arg error\n");
-		return (1);
-	}
-	else
-	{
-		num_len = count_tokens(argv + 1, argc - 1);
-		printf("%d\n", num_len);
-		stack_a = parse_args(argv + 1, argc - 1, &stack_a);
-		if (!stack_a)
-		{
-			printf("parse error\n");
-			return (1);
-		}
-		print_forward(stack_a);
-		printf("ok\n");
-	}
-	return (0);
 }
 
 static void	free_tokens(char **tokens)
