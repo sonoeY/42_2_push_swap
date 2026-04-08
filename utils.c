@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/03/24 00:36:27 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/08 16:12:41 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,27 @@ bool	is_space(char c)
 	return (false);
 }
 
+long long	ft_atol_ps(const char *nptr)
+{
+	long	num;
+	long	sign;
+	size_t	i;
+
+	num = 0;
+	sign = 1;
+	i = 0;
+	// while (ft_isspace(nptr[i]) == 1)
+	// 	i++;
+	if (is_sign(nptr[i]) == 1)
+	{
+		if (nptr[i] == '-')
+			sign = sign * -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]) == 1)
+	{
+		num = (num * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (sign * num);
+}

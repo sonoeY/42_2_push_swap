@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/03/31 23:19:38 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/08 16:12:37 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,22 @@
 // # include "libft/source_libft/libft.h"
 // # include "libft/ft_printf.h"
 
+typedef struct	s_list
+{
+    struct s_list	*pre;
+    int				data;
+    struct s_list	*next;
+}					t_list;
+
+t_list      *parse_args(char **arg_value, int arg_total, t_list **stack_a);
 int			count_tokens(char **s, int arg_total);
-long long	*make_array(char **arg_value, int arg_total);
-long long	ft_atol_ps(const char *nptr);
+bool		is_numeric_token(char *tokens);
+bool		is_dup(t_list *lst);
+t_list		*gen_node(long long num);
+void		ft_lstadd_last(t_list **lst, t_list *new);
+
 bool		is_sign(char c);
 bool		is_space(char c);
+long long	ft_atol_ps(const char *nptr);
+
 #endif
