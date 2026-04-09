@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/08 17:04:52 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/09 18:14:59 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_list
     struct s_list	*pre;
     int				data;
     struct s_list	*next;
-}					t_list;
+}   t_list;
 
 t_list      *parse_args(char **arg_value, int arg_total, t_list **stack_a);
 int			count_tokens(char **s, int arg_total);
@@ -38,6 +38,7 @@ void		ft_lstadd_last(t_list **lst, t_list *new);
 bool		is_sign(char c);
 bool		is_space(char c);
 long long	ft_atol_ps(const char *nptr);
+void        ft_listadd_front(t_list **lst, t_list *new);
 int	        exit_error(int fd);
 
 #endif
