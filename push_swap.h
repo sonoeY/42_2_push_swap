@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/09 18:14:59 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/09 18:20:40 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		ft_lstadd_last(t_list **lst, t_list *new);
 bool		is_sign(char c);
 bool		is_space(char c);
 long long	ft_atol_ps(const char *nptr);
-void        ft_listadd_front(t_list **lst, t_list *new);
+void        ft_lstadd_front(t_list **lst, t_list *new);
 int	        exit_error(int fd);
 
 #endif

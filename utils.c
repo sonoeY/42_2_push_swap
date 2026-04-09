@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/09 18:17:09 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/09 18:20:48 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ long long	ft_atol_ps(const char *nptr)
 	return (sign * num);
 }
 
-void ft_listadd_front(t_list **lst, t_list *new)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new)
 		return ;

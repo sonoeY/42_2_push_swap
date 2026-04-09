@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/08 16:12:39 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/09 18:19:35 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,19 +88,19 @@ t_list	*gen_node(long long num)
 	return (new);
 }
 
-void	ft_lstadd_last(t_list **lst, t_list *new)
-{
-	t_list *curr;
+// void	ft_lstadd_last(t_list **lst, t_list *new)
+// {
+// 	t_list *curr;
 
-	curr = *lst;
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		while (curr -> next)
-			curr = curr-> next;
-		curr->next = new;
-		new->pre = curr;
-		new->next = NULL;
-	}
-}
+// 	curr = *lst;
+// 	if (!*lst)
+// 		*lst = new;
+// 	else
+// 	{
+// 		while (curr -> next)
+// 			curr = curr-> next;
+// 		curr->next = new;
+// 		new->pre = curr;
+// 		new->next = NULL;
+// 	}
+// }
