@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/09 18:20:40 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/12 21:28:01 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ int			count_tokens(char **s, int arg_total);
 bool		is_numeric_token(char *tokens);
 bool		is_dup(t_list *lst);
 t_list		*gen_node(long long num);
-void		ft_lstadd_last(t_list **lst, t_list *new);
+
+void        swap_node(t_list **lst);
+void        push_node(t_list **lst_from, t_list **lst_to);
+void	    rotate_up(t_list **lst);
+void	    rotate_down(t_list **lst);
 
 bool		is_sign(char c);
 bool		is_space(char c);

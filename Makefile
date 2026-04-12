@@ -3,7 +3,7 @@ LIBFT 		= 42_0_libft/libft.a
 NAME		= push_swap
 LIB_PS		= libft_ps.a
 MAIN 		= main.c
-SRCS		= parse.c parse_helper.c utils.c
+SRCS		= parse.c parse_helper.c sort_rules.c utils.c
 OBJS		= $(SRCS:.c=.o)
 CC			= cc
 CFLAGS = -Wall -Wextra -Werror

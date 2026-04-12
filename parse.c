@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/09 18:20:56 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/12 21:28:46 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ t_list	*parse_args(char **arg_value, int arg_total, t_list **stack_a)
 			new_node = gen_node(num);
 			if (!new_node)
 				return (free_all(tokens, stack_a));
-			//ft_lstadd_last(stack_a, new_node);
 			ft_lstadd_front(stack_a, new_node);
 			j++;
 		}
