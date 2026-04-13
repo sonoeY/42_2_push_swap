@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 19:16:17 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 20:47:04 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	// t_list	*min;
-
 	// int			num_len;
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
@@ -40,9 +39,12 @@ int	main(int argc, char **argv)
 	stack_a = parse_args(argv + 1, argc - 1, &stack_a);
 	if (!stack_a)
 		return (exit_error(2));
-	// min = find_min(stack_a);
-	// printf("min: %d\n", min->data);
 	compress_data(&stack_a);
+	if (ft_lstsize(stack_a) == 1 || is_sorted(stack_a))
+	{
+		free_lst(&stack_a);
+		return (0);
+	}
 	// sort(nums) & print used operations;
 	printf("a===\n");
 	print_forward(stack_a);

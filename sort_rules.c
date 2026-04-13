@@ -5,86 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/09 17:00:00 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/13 15:44:45 by soyamagu         ###   ########.fr       */
+/*   Created: 2026/04/12 21:55:02 by sonoe             #+#    #+#             */
+/*   Updated: 2026/04/13 20:42:36 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_node(t_list **lst)
-{
-	t_list	*first;
-	t_list	*sec;
-	t_list	*trd;
+//(f) total: 6. 
 
-	first = *lst;
-	sec = (*lst)->next;
-	if (!*lst || !(*lst)->next)
-		return ;
-	trd = sec->next;
-	first->next = trd;
-	if (trd)
-		trd->pre = first;
-	sec->pre = NULL;
-	sec->next = first;
-	first->pre = sec;
-	*lst = sec;
+void	sa(t_list **stack_a)
+{
+	swap_node(stack_a);
+	write(1, "sa\n", 3);
 	return ;
 }
 
-void	push_node(t_list **lst_from, t_list **lst_to)
-{
-	t_list	*a_head;
+// void	sb(t_list **stack_b)
+// {
+// 	swap_node(stack_b);
+// 	write(1, "sb\n", 3);
+// 	return ;
+// }
 
-	if (!*lst_from)
-		return ;
-	a_head = *lst_from;
-	a_head->pre = NULL;
-	if (!a_head->next)
-		*lst_from = NULL;
-	else
-	{
-		*lst_from = a_head->next;
-		(*lst_from)->pre = NULL;
-	}
-	a_head->next = NULL;
-	ft_lstadd_front(lst_to, a_head);
+void	pa(t_list **stack_b, t_list **stack_a)
+{
+	push_node(stack_b, stack_a);
+	write(1, "pa\n", 3);
 	return ;
 }
 
-void	rotate_up(t_list **lst)
+void	pb(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*curr;
-	t_list	*tmp;
-
-	if (!*lst || !(*lst)->next)
-		return ;
-	curr = *lst;
-	tmp = *lst;
-	(*lst) = (*lst)->next;
-	(*lst)->pre = NULL;
-	while (curr->next)
-		curr = curr->next;
-	curr->next = tmp;
-	tmp->pre = curr;
-	tmp->next = NULL;
+	push_node(stack_a, stack_b);
+	write(1, "pb\n", 3);
 	return ;
 }
 
-void	rotate_down(t_list **lst)
+void	ra(t_list **stack_a)
 {
-	t_list	*curr;
-	t_list	*tmp;
-
-	if (!*lst || !(*lst)->next)
-		return ;
-	curr = *lst;
-	while (curr->next)
-		curr = curr->next;
-	tmp = curr;
-	curr->pre->next = NULL;
-	tmp->pre = NULL;
-	ft_lstadd_front(lst, tmp);
+	rotate_up(stack_a);
+	write(1, "ra\n", 3);
 	return ;
 }
+
+// void	rb(t_list **stack_b)
+// {
+// 	rotate_up(stack_b);
+// 	write(1, "rb\n", 3);
+// 	return ;
+// }

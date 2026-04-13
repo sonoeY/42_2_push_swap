@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 19:14:33 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 20:42:51 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,13 @@ void				swap_node(t_list **lst);
 void				push_node(t_list **lst_from, t_list **lst_to);
 void				rotate_up(t_list **lst);
 void				rotate_down(t_list **lst);
+bool				is_sorted(t_list *lst);
 void				sa(t_list **stack_a);
-void				sb(t_list **stack_b);
 void				pa(t_list **stack_b, t_list **stack_a);
 void				pb(t_list **stack_a, t_list **stack_b);
 void				ra(t_list **stack_a);
-void				rb(t_list **stack_b);
+//void				sb(t_list **stack_b);
+//void				rb(t_list **stack_b);
 
 bool				is_sign(char c);
 bool				is_space(char c);
