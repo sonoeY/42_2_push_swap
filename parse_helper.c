@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 15:43:11 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 16:15:01 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,29 @@ bool	is_dup(t_list *lst)
 		curr = curr->next;
 	}
 	return (false);
+}
+
+long long	ft_atol_ps(const char *nptr)
+{
+	long	num;
+	long	sign;
+	size_t	i;
+
+	num = 0;
+	sign = 1;
+	i = 0;
+	if (is_sign(nptr[i]) == 1)
+	{
+		if (nptr[i] == '-')
+			sign = sign * -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]) == 1)
+	{
+		num = (num * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (sign * num);
 }
 
 t_list	*gen_node(long long num)

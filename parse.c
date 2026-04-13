@@ -6,14 +6,14 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 15:38:27 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 16:14:40 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_tokens(char **tokens);
-static void	*free_all(char **tokens, t_list **lst);
+static void			free_tokens(char **tokens);
+static void			*free_all(char **tokens, t_list **lst);
 
 t_list	*parse_args(char **arg_value, int arg_total, t_list **stack_a)
 {
@@ -34,7 +34,7 @@ t_list	*parse_args(char **arg_value, int arg_total, t_list **stack_a)
 		{
 			if (!is_numeric_token(tokens[j]))
 				return (free_all(tokens, stack_a));
-			num = atol(tokens[j]);
+			num = ft_atol_ps(tokens[j]);
 			if (num > INT_MAX || num < INT_MIN)
 				return (free_all(tokens, stack_a));
 			new_node = gen_node(num);

@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 15:46:35 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 16:17:50 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,21 @@ bool	is_space(char c)
 	return (false);
 }
 
-long long	ft_atol_ps(const char *nptr)
+int	ft_lstsize(t_list *lst)
 {
-	long	num;
-	long	sign;
-	size_t	i;
+	t_list	*curr;
+	int		i;
 
-	num = 0;
-	sign = 1;
 	i = 0;
-	if (is_sign(nptr[i]) == 1)
+	if (!lst)
+		return (i);
+	curr = lst;
+	while (curr)
 	{
-		if (nptr[i] == '-')
-			sign = sign * -1;
 		i++;
+		curr = curr->next;
 	}
-	while (ft_isdigit(nptr[i]) == 1)
-	{
-		num = (num * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * num);
+	return (i);
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
@@ -80,4 +74,10 @@ void	free_lst(t_list **lst)
 		curr = next;
 	}
 	*lst = NULL;
+}
+
+int	exit_error(int fd)
+{
+	write(fd, "Error\n", 6);
+	return (1);
 }
