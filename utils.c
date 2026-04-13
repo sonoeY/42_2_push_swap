@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/09 18:20:48 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/13 15:46:35 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//need to remove (f) for print error
 
 bool	is_sign(char c)
 {
@@ -35,8 +37,6 @@ long long	ft_atol_ps(const char *nptr)
 	num = 0;
 	sign = 1;
 	i = 0;
-	// while (ft_isspace(nptr[i]) == 1)
-	// 	i++;
 	if (is_sign(nptr[i]) == 1)
 	{
 		if (nptr[i] == '-')
@@ -51,7 +51,7 @@ long long	ft_atol_ps(const char *nptr)
 	return (sign * num);
 }
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new)
 		return ;
@@ -67,8 +67,17 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	return ;
 }
 
-int	exit_error(int fd)
+void	free_lst(t_list **lst)
 {
-	write(fd, "Error\n", 6);
-	return (1);
+	t_list	*curr;
+	t_list	*next;
+
+	curr = *lst;
+	while (curr)
+	{
+		next = curr-> next;
+		free(curr);
+		curr = next;
+	}
+	*lst = NULL;
 }

@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/12 21:28:46 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/13 15:38:27 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static void	free_tokens(char **tokens);
-static void	free_lst(t_list **lst);
 static void	*free_all(char **tokens, t_list **lst);
 
 t_list	*parse_args(char **arg_value, int arg_total, t_list **stack_a)
@@ -66,21 +65,6 @@ static void	free_tokens(char **tokens)
 		i++;
 	}
 	free(tokens);
-}
-
-static void	free_lst(t_list **lst)
-{
-	t_list	*curr;
-	t_list	*next;
-
-	curr = *lst;
-	while (curr)
-	{
-		next = curr-> next;
-		free(curr);
-		curr = next;
-	}
-	*lst = NULL;
 }
 
 static void	*free_all(char **tokens, t_list **lst)

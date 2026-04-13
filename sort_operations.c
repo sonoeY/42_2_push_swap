@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 21:55:02 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/12 22:19:08 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/13 15:44:01 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//(f) total: 6. need to remove 1
 
 void	sa(t_list **stack_a)
 {

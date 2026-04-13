@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_rules.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 17:00:00 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/12 21:37:28 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/13 15:44:45 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap_node(t_list **lst)
 {
 	t_list	*first;
 	t_list	*sec;
-	t_list  *trd;
+	t_list	*trd;
 
 	first = *lst;
 	sec = (*lst)->next;

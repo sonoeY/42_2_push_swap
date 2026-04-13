@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/09 18:19:35 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/13 15:43:11 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ bool	is_numeric_token(char *tokens)
 	while (tokens[i])
 	{
 		if ((i == 0 && is_sign(tokens[i]))
-						&& !ft_isdigit(tokens[i + 1]))
-				return (false);
-			else if (!(is_sign(tokens[i]) || ft_isdigit(tokens[i])))
-				return (false);
+			&& !ft_isdigit(tokens[i + 1]))
+			return (false);
+		else if (!(is_sign(tokens[i]) || ft_isdigit(tokens[i])))
+			return (false);
 		i++;
 	}
 	return (true);
@@ -77,7 +77,7 @@ bool	is_dup(t_list *lst)
 
 t_list	*gen_node(long long num)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = malloc(sizeof(t_list));
 	if (!new)
