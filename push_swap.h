@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 16:15:27 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 19:14:33 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@
 typedef struct s_list
 {
 	struct s_list	*pre;
-	int				data;
 	struct s_list	*next;
+	int				data;
+	int				index;
 }					t_list;
 
 t_list				*parse_args(char **arg_value, int arg_total,
@@ -35,6 +36,8 @@ bool				is_numeric_token(char *tokens);
 bool				is_dup(t_list *lst);
 long long			ft_atol_ps(const char *nptr);
 t_list				*gen_node(long long num);
+
+void				compress_data(t_list **lst);
 
 void				swap_node(t_list **lst);
 void				push_node(t_list **lst_from, t_list **lst_to);

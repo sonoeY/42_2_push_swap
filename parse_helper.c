@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 16:15:01 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 18:27:48 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ t_list	*gen_node(long long num)
 	if (!new)
 		return (NULL);
 	new->data = (int)num;
+	new->index = -1;
 	new->pre = NULL;
 	new ->next = NULL;
 	return (new);

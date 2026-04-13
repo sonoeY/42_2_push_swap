@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 15:52:39 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 19:16:17 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_forward(t_list *head)
 {
 	while (head)
 	{
-		printf("%d\n", head->data);
+		printf("%d\n", head->index);
 		head = head->next;
 	}
 	return ;
@@ -28,6 +28,7 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	// t_list	*min;
 
 	// int			num_len;
 	stack_a = NULL;
@@ -39,7 +40,9 @@ int	main(int argc, char **argv)
 	stack_a = parse_args(argv + 1, argc - 1, &stack_a);
 	if (!stack_a)
 		return (exit_error(2));
-	// 座標圧縮！！！！！！　Compress_data
+	// min = find_min(stack_a);
+	// printf("min: %d\n", min->data);
+	compress_data(&stack_a);
 	// sort(nums) & print used operations;
 	printf("a===\n");
 	print_forward(stack_a);
