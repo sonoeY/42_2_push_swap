@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 20:47:04 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:16:05 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 #include <stdio.h>
 
 // tmp
-void	print_forward(t_list *head)
+// void	print_data_forward(t_list *head)
+// {
+// 	while (head)
+// 	{
+// 		printf("%d\n", head->data);
+// 		head = head->next;
+// 	}
+// 	return ;
+// }
+
+
+void	print_index_forward(t_list *head)
 {
 	while (head)
 	{

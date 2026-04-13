@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 20:42:51 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:13:32 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ bool				is_space(char c);
 int					exit_error(int fd);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_last(t_list **lst, t_list *new);
 void				free_lst(t_list **lst);
 
 #endif

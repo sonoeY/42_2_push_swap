@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 16:14:40 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:11:53 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_list	*parse_args(char **arg_value, int arg_total, t_list **stack_a)
 			new_node = gen_node(num);
 			if (!new_node)
 				return (free_all(tokens, stack_a));
-			ft_lstadd_front(stack_a, new_node);
+			ft_lstadd_last(stack_a, new_node);
 			j++;
 		}
 		free_tokens(tokens);

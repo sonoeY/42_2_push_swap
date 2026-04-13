@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 16:17:50 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:13:47 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,23 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 	*lst = new;
 	return ;
+}
+
+void	ft_lstadd_last(t_list **lst, t_list *new)
+{
+	t_list	*curr;
+
+	curr = *lst;
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		while (curr -> next)
+			curr = curr-> next;
+		curr->next = new;
+		new->pre = curr;
+		new->next = NULL;
+	}
 }
 
 void	free_lst(t_list **lst)
