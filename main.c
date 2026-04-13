@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 22:16:05 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:19:39 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ int	main(int argc, char **argv)
 	compress_data(&stack_a);
 	if (ft_lstsize(stack_a) == 1 || is_sorted(stack_a))
 	{
+		printf("a===\n");
+		print_forward(stack_a);
+		printf("b===\n");
+		print_forward(stack_b);
 		free_lst(&stack_a);
 		return (0);
 	}
