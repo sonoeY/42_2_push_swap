@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 21:55:02 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/15 20:06:11 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:08:05 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	sa(t_list **stack_a)
 	return ;
 }
 
-void	sb(t_list **stack_b)
-{
-	swap_node(stack_b);
-	write(1, "sb\n", 3);
-	return ;
-}
+// void	sb(t_list **stack_b)
+// {
+// 	swap_node(stack_b);
+// 	write(1, "sb\n", 3);
+// 	return ;
+// }
 
 void	pa(t_list **stack_b, t_list **stack_a)
 {
