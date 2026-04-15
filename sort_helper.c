@@ -6,11 +6,25 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 17:00:00 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/13 20:45:08 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/15 20:16:27 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+bool	is_sorted(t_list *lst)
+{
+	t_list	*curr;
+
+	curr = lst;
+	while (curr->next)
+	{
+		if ((curr->index) > (curr->next->index))
+			return (false);
+		curr = curr->next;
+	}
+	return (true);
+}
 
 void	swap_node(t_list **lst)
 {
@@ -18,10 +32,10 @@ void	swap_node(t_list **lst)
 	t_list	*sec;
 	t_list	*trd;
 
-	first = *lst;
-	sec = (*lst)->next;
 	if (!*lst || !(*lst)->next)
 		return ;
+	first = *lst;
+	sec = (*lst)->next;
 	trd = sec->next;
 	first->next = trd;
 	if (trd)
@@ -87,18 +101,4 @@ void	rotate_down(t_list **lst)
 	tmp->pre = NULL;
 	ft_lstadd_front(lst, tmp);
 	return ;
-}
-
-bool	is_sorted(t_list *lst)
-{
-	t_list	*curr;
-
-	curr = lst;
-	while (curr->next)
-	{
-		if (curr->index > curr->next->index)
-			return (false);
-		curr = curr->next;
-	}
-	return (true);
 }
