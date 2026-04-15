@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/15 20:21:41 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:21:48 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	int		size_a;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -48,7 +49,8 @@ int	main(int argc, char **argv)
 		return (exit_error(2));
 	compress_data(&stack_a);
 	if ((ft_lstsize(stack_a) != 1) && (!is_sorted(stack_a)))
-	// sort(nums) & print used operations;
+	//size_a = ft_lst_size(stack_a);
+	//sort_lst(&stack_a, &stack_b, size_a);
 	free_lst(&stack_a);
 	return (0);
 }
