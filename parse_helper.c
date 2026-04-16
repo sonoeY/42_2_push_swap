@@ -6,12 +6,19 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 18:27:48 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:13:18 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 // #include <stdio.h>
+
+// bool	is_space(char c)
+// {
+// 	if (c == ' ')
+// 		return (true);
+// 	return (false);
+// }
 
 int	count_tokens(char **s, int arg_total)
 {
@@ -26,8 +33,8 @@ int	count_tokens(char **s, int arg_total)
 		j = 0;
 		while (s[i][j])
 		{
-			if ((j == 0 && !is_space(s[i][j]))
-				|| (j > 0 && !is_space(s[i][j]) && is_space(s[i][j - 1])))
+			if ((j == 0 && !(s[i][j] == SPACE))
+				|| (j > 0 && !(s[i][j] == SPACE) && (s[i][j - 1] == SPACE)))
 				tokens++;
 			j++;
 		}
@@ -53,26 +60,6 @@ bool	is_numeric_token(char *tokens)
 		i++;
 	}
 	return (true);
-}
-
-bool	is_dup(t_list *lst)
-{
-	t_list	*curr;
-	t_list	*cmp;
-
-	curr = lst;
-	while (curr)
-	{
-		cmp = curr->next;
-		while (cmp)
-		{
-			if (curr->data == cmp->data)
-				return (true);
-			cmp = cmp->next;
-		}
-		curr = curr->next;
-	}
-	return (false);
 }
 
 long long	ft_atol_ps(const char *nptr)
@@ -112,19 +99,22 @@ t_list	*gen_node(long long num)
 	return (new);
 }
 
-// void	ft_lstadd_last(t_list **lst, t_list *new)
-// {
-// 	t_list *curr;
+bool	is_lst_dup(t_list *lst)
+{
+	t_list	*curr;
+	t_list	*cmp;
 
-// 	curr = *lst;
-// 	if (!*lst)
-// 		*lst = new;
-// 	else
-// 	{
-// 		while (curr -> next)
-// 			curr = curr-> next;
-// 		curr->next = new;
-// 		new->pre = curr;
-// 		new->next = NULL;
-// 	}
-// }
+	curr = lst;
+	while (curr)
+	{
+		cmp = curr->next;
+		while (cmp)
+		{
+			if (curr->data == cmp->data)
+				return (true);
+			cmp = cmp->next;
+		}
+		curr = curr->next;
+	}
+	return (false);
+}

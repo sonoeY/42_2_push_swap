@@ -6,24 +6,15 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/15 19:25:51 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:10:18 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//(f): 7
-
 bool	is_sign(char c)
 {
 	if (c == '+' || c == '-')
-		return (true);
-	return (false);
-}
-
-bool	is_space(char c)
-{
-	if (c == ' ')
 		return (true);
 	return (false);
 }
@@ -91,10 +82,4 @@ void	free_lst(t_list **lst)
 		curr = next;
 	}
 	*lst = NULL;
-}
-
-int	exit_error(int fd)
-{
-	write(fd, "Error\n", 6);
-	return (1);
 }

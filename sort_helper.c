@@ -6,12 +6,14 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:43:58 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 14:58:50 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:37:48 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+// #include <stdio.h>
 
+//validation before sorting
 bool	is_sorted(t_list *lst)
 {
 	t_list	*curr;
@@ -26,13 +28,14 @@ bool	is_sorted(t_list *lst)
 	return (true);
 }
 
+//check min index from three nodes
 int	check_min(t_list *lst)
 {
 	t_list	*curr;
 	int		min;
 
 	curr = lst;
-	min = 0;
+	min = lst->index;
 	while (curr)
 	{
 		if (curr->index < min)
@@ -42,25 +45,7 @@ int	check_min(t_list *lst)
 	return (min);
 }
 
-int	count_depth(t_list *lst, int num)
-{
-	t_list	*curr;
-	int		n;
-
-	if (!lst)
-		return (-1);
-	curr = lst;
-	n = 0;
-	while (curr)
-	{
-		if (curr->index == num)
-			return (n);
-		n++;
-		curr = curr->next;
-	}
-	return (-1);
-}
-
+//execute the smallest index in stack_a to stack_b
 void	execute_num(t_list **stack_a, t_list **stack_b, int num)
 {
 	int	n;
@@ -80,4 +65,42 @@ void	execute_num(t_list **stack_a, t_list **stack_b, int num)
 	}
 	pb(stack_a, stack_b);
 	return ;
+}
+
+//check the depth from top node
+int	count_depth(t_list *lst, int num)
+{
+	t_list	*curr;
+	int		n;
+
+	if (!lst)
+		return (-1);
+	curr = lst;
+	n = 0;
+	while (curr)
+	{
+		if (curr->index == num)
+			return (n);
+		n++;
+		curr = curr->next;
+	}
+	return (-1);
+}
+
+//check the max number of bit
+int	find_bit_max(t_list *lst)
+{
+	int	n;
+	int	i;
+	int	max;
+
+	n = ft_lstsize(lst) - 1;
+	i = 1;
+	while (i <= BIT_MAX)
+	{
+		if ((n >> i & 1) == 1)
+			max = i;
+		i++;
+	}
+	return (max);
 }

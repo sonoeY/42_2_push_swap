@@ -6,21 +6,21 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:31:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 14:59:34 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:29:30 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+// #include <stdio.h>
 
 void	sort_three(t_list **lst);
 void	sort_four(t_list **stack_a, t_list **stack_b);
 void	sort_five(t_list **stack_a, t_list **stack_b);
-// void	ft_radix_sort(t_list **stack_a, t_list **stack_b, int size_a);
+void	sort_radix(t_list **stack_a, t_list **stack_b, int size_a);
 
 void	sort_lst(t_list **stack_a, t_list **stack_b, int size_a)
 {
-	if (!stack_a || (!stack_a && !stack_b))
+	if (!stack_a || !*stack_a || (!stack_a && !stack_b))
 		return ;
 	if (size_a == 2)
 		sa(stack_a);
@@ -31,8 +31,7 @@ void	sort_lst(t_list **stack_a, t_list **stack_b, int size_a)
 	else if (size_a == 5)
 		sort_five(stack_a, stack_b);
 	if (size_a >= 6)
-		//printf("OVER 6");
-		// sort_radix(stack_a, stack_b, size_a);
+		sort_radix(stack_a, stack_b, size_a);
 	return ;
 }
 
@@ -94,31 +93,31 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	pa(stack_b, stack_a);
 }
 
-// void	ft_radix_sort(t_list **stack_a, t_list **stack_b, int size_a)
-// {
-// 	int max;
-// 	int	i;
-// 	int size_b;
+void	sort_radix(t_list **stack_a, t_list **stack_b, int size_a)
+{
+	int	max;
+	int	i;
+	int	size_b;
 
-// 	max = find_bit_max();
-// 	i = 0;
-// 	while (i < max)
-// 	{
-// 		while (size_a > 0)
-// 		{
-// 			if (((*stack_a)->data >> i) & 1)
-// 				ra(stack_a);
-// 			else
-// 				pb(stack_a, stack_b);
-// 			size_a--;
-// 		}
-// 		while (size_b > 0)
-// 		{
-// 			pa(stack_b, stack_a);
-// 			size_b--;
-// 		}
-// 		size_a = ft_lst_size(stack_a);
-// 		size_b = ft_lst_size(stack_b);
-// 		i++;
-// 	}
-// }
+	max = find_bit_max(*stack_a);
+	i = 0;
+	while (i <= max)
+	{
+		while (size_a > 0)
+		{
+			if (((*stack_a)->index >> i & 1) == 0)
+				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
+			size_a--;
+		}
+		size_b = ft_lstsize(*stack_b);
+		while (size_b > 0)
+		{
+			pa(stack_b, stack_a);
+			size_b--;
+		}
+		size_a = ft_lstsize(*stack_a);
+		i++;
+	}
+}

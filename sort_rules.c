@@ -6,13 +6,11 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 21:55:02 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/16 13:49:38 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:11:38 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//(f) total: 5.
 
 void	sa(t_list **stack_a)
 {

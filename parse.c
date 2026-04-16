@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 22:11:53 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:13:18 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_list	*parse_args(char **arg_value, int arg_total, t_list **stack_a)
 		free_tokens(tokens);
 		tokens_i++;
 	}
-	if (is_dup(*stack_a))
+	if (is_lst_dup(*stack_a))
 	{
 		free_lst(stack_a);
 		return (NULL);
