@@ -6,13 +6,13 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 21:55:02 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/15 22:08:05 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 13:49:38 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//(f) total: 6.
+//(f) total: 5.
 
 void	sa(t_list **stack_a)
 {
@@ -20,13 +20,6 @@ void	sa(t_list **stack_a)
 	write(1, "sa\n", 3);
 	return ;
 }
-
-// void	sb(t_list **stack_b)
-// {
-// 	swap_node(stack_b);
-// 	write(1, "sb\n", 3);
-// 	return ;
-// }
 
 void	pa(t_list **stack_b, t_list **stack_a)
 {
@@ -52,9 +45,16 @@ void	ra(t_list **stack_a)
 void	rra(t_list **stack_a)
 {
 	rotate_down(stack_a);
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 	return ;
 }
+
+// void	sb(t_list **stack_b)
+// {
+// 	swap_node(stack_b);
+// 	write(1, "sb\n", 3);
+// 	return ;
+// }
 
 // void	rb(t_list **stack_b)
 // {

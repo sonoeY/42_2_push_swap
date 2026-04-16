@@ -6,12 +6,12 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/15 22:21:48 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 14:59:56 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 // tmp
 // void	print_data_forward(t_list *head)
@@ -24,15 +24,15 @@
 // 	return ;
 // }
 
-// void	print_index_forward(t_list *head)
-// {
-// 	while (head)
-// 	{
-// 		printf("%d\n", head->index);
-// 		head = head->next;
-// 	}
-// 	return ;
-// }
+void	print_index_forward(t_list *head)
+{
+	while (head)
+	{
+		printf("%d\n", head->index);
+		head = head->next;
+	}
+	return ;
+}
 
 int	main(int argc, char **argv)
 {
@@ -48,9 +48,15 @@ int	main(int argc, char **argv)
 	if (!stack_a)
 		return (exit_error(2));
 	compress_data(&stack_a);
+	size_a = ft_lstsize(stack_a);
 	if ((ft_lstsize(stack_a) != 1) && (!is_sorted(stack_a)))
-	//size_a = ft_lst_size(stack_a);
-	//sort_lst(&stack_a, &stack_b, size_a);
+	{
+		sort_lst(&stack_a, &stack_b, size_a);
+	}
+	// printf("a===\n");
+	// print_index_forward(stack_a);
+	// printf("b===\n");
+	// print_index_forward(stack_b);
 	free_lst(&stack_a);
 	return (0);
 }

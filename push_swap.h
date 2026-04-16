@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/15 22:08:25 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 13:57:00 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@ t_list				*gen_node(long long num);
 
 void				compress_data(t_list **lst);
 
-void				swap_node(t_list **lst);
-void				push_node(t_list **lst_from, t_list **lst_to);
-void				rotate_up(t_list **lst);
-void				rotate_down(t_list **lst);
-bool				is_sorted(t_list *lst);
 void				sa(t_list **stack_a);
 void				pb(t_list **stack_a, t_list **stack_b);
 void				ra(t_list **stack_a);
@@ -51,6 +46,21 @@ void				rra(t_list **stack_a);
 void				pa(t_list **stack_b, t_list **stack_a);
 // void				sb(t_list **stack_b);
 //void				rb(t_list **stack_b);
+void				swap_node(t_list **lst);
+void				push_node(t_list **lst_from, t_list **lst_to);
+void				rotate_up(t_list **lst);
+void				rotate_down(t_list **lst);
+
+void				sort_lst(t_list **stack_a, t_list **stack_b, int size_a);
+void				sort_three(t_list **lst);
+void				sort_four(t_list **stack_a, t_list **stack_b);
+void				sort_five(t_list **stack_a, t_list **stack_b);
+// void				ft_radix_sort(t_list **stack_a, t_list **stack_b, int size_a);
+bool				is_sorted(t_list *lst);
+int					check_min(t_list *lst);
+int					count_depth(t_list *lst, int num);
+void				execute_num(t_list **stack_a, t_list **stack_b, int num);
+
 
 bool				is_sign(char c);
 bool				is_space(char c);

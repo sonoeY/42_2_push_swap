@@ -6,11 +6,17 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:31:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/15 22:11:03 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 14:59:34 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+
+void	sort_three(t_list **lst);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
+// void	ft_radix_sort(t_list **stack_a, t_list **stack_b, int size_a);
 
 void	sort_lst(t_list **stack_a, t_list **stack_b, int size_a)
 {
@@ -25,40 +31,94 @@ void	sort_lst(t_list **stack_a, t_list **stack_b, int size_a)
 	else if (size_a == 5)
 		sort_five(stack_a, stack_b);
 	if (size_a >= 6)
-		sort_radix(stack_a, stack_b);
+		//printf("OVER 6");
+		// sort_radix(stack_a, stack_b, size_a);
 	return ;
 }
 
-// void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
+void	sort_three(t_list **lst)
+{
+	int	min;
+	int	mid;
+
+	if (!lst || !(*lst)->next || !(*lst)->next->next)
+		return ;
+	min = check_min(*lst);
+	mid = min + 1;
+	if ((*lst)->index == min)
+	{
+		sa(lst);
+		ra(lst);
+	}
+	else if (((*lst)->index == mid) && ((*lst)->next->index == min))
+		sa(lst);
+	else if (((*lst)->index == mid) && ((*lst)->next->index != min))
+		rra(lst);
+	else if (((*lst)->index > mid) && ((*lst)->next->index == min))
+		ra(lst);
+	else if (((*lst)->index > mid) && ((*lst)->next->index != min))
+	{
+		sa(lst);
+		rra(lst);
+	}
+	return ;
+}
+
+void	sort_four(t_list **stack_a, t_list **stack_b)
+{
+	int	min;
+
+	if (!stack_a || !*stack_a)
+		return ;
+	min = check_min(*stack_a);
+	execute_num(stack_a, stack_b, min);
+	if (!is_sorted(*stack_a))
+		sort_three(stack_a);
+	pa(stack_b, stack_a);
+}
+
+void	sort_five(t_list **stack_a, t_list **stack_b)
+{
+	int	min;
+	int	mid;
+
+	if (!stack_a || !*stack_a)
+		return ;
+	min = check_min(*stack_a);
+	mid = min + 1;
+	execute_num(stack_a, stack_b, min);
+	execute_num(stack_a, stack_b, mid);
+	if (!is_sorted(*stack_a))
+		sort_three(stack_a);
+	pa(stack_b, stack_a);
+	pa(stack_b, stack_a);
+}
+
+// void	ft_radix_sort(t_list **stack_a, t_list **stack_b, int size_a)
 // {
-// 	max = bit桁
+// 	int max;
+// 	int	i;
+// 	int size_b;
+
+// 	max = find_bit_max();
 // 	i = 0;
-// 	j = 0;
-// 	c = 0;
-// 	size_a = ft_lst_size(stack_a);
-
-// while (i < max)
-// {
-// 	c = 0;
-
-// 	while (c < size_a)
+// 	while (i < max)
 // 	{
-// 		if (((*stack_a)->data >> i) & 1)
-// 			ra;
-// 		else
-// 			pb;
-// 		c++;
+// 		while (size_a > 0)
+// 		{
+// 			if (((*stack_a)->data >> i) & 1)
+// 				ra(stack_a);
+// 			else
+// 				pb(stack_a, stack_b);
+// 			size_a--;
+// 		}
+// 		while (size_b > 0)
+// 		{
+// 			pa(stack_b, stack_a);
+// 			size_b--;
+// 		}
+// 		size_a = ft_lst_size(stack_a);
+// 		size_b = ft_lst_size(stack_b);
+// 		i++;
 // 	}
-
-// 	j = 0;
-// 	while (j < size_b)
-// 	{
-// 		pa;
-// 		j++;
-// 	}
-
-// 	size_a = ft_lst_size(stack_a);
-// 	size_b = ft_lst_size(stack_b);
-// 	i++;
-// }
 // }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/09 17:00:00 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/15 20:16:27 by soyamagu         ###   ########.fr       */
+/*   Created: 2026/04/16 11:43:58 by soyamagu          #+#    #+#             */
+/*   Updated: 2026/04/16 14:58:50 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,79 +26,58 @@ bool	is_sorted(t_list *lst)
 	return (true);
 }
 
-void	swap_node(t_list **lst)
+int	check_min(t_list *lst)
 {
-	t_list	*first;
-	t_list	*sec;
-	t_list	*trd;
+	t_list	*curr;
+	int		min;
 
-	if (!*lst || !(*lst)->next)
-		return ;
-	first = *lst;
-	sec = (*lst)->next;
-	trd = sec->next;
-	first->next = trd;
-	if (trd)
-		trd->pre = first;
-	sec->pre = NULL;
-	sec->next = first;
-	first->pre = sec;
-	*lst = sec;
-	return ;
-}
-
-void	push_node(t_list **lst_from, t_list **lst_to)
-{
-	t_list	*a_head;
-
-	if (!*lst_from)
-		return ;
-	a_head = *lst_from;
-	a_head->pre = NULL;
-	if (!a_head->next)
-		*lst_from = NULL;
-	else
+	curr = lst;
+	min = 0;
+	while (curr)
 	{
-		*lst_from = a_head->next;
-		(*lst_from)->pre = NULL;
+		if (curr->index < min)
+			min = curr->index;
+		curr = curr->next;
 	}
-	a_head->next = NULL;
-	ft_lstadd_front(lst_to, a_head);
-	return ;
+	return (min);
 }
 
-void	rotate_up(t_list **lst)
+int	count_depth(t_list *lst, int num)
 {
 	t_list	*curr;
-	t_list	*tmp;
+	int		n;
 
-	if (!*lst || !(*lst)->next)
-		return ;
-	curr = *lst;
-	tmp = *lst;
-	(*lst) = (*lst)->next;
-	(*lst)->pre = NULL;
-	while (curr->next)
+	if (!lst)
+		return (-1);
+	curr = lst;
+	n = 0;
+	while (curr)
+	{
+		if (curr->index == num)
+			return (n);
+		n++;
 		curr = curr->next;
-	curr->next = tmp;
-	tmp->pre = curr;
-	tmp->next = NULL;
-	return ;
+	}
+	return (-1);
 }
 
-void	rotate_down(t_list **lst)
+void	execute_num(t_list **stack_a, t_list **stack_b, int num)
 {
-	t_list	*curr;
-	t_list	*tmp;
+	int	n;
 
-	if (!*lst || !(*lst)->next)
+	if (!stack_a || !*stack_a)
 		return ;
-	curr = *lst;
-	while (curr->next)
-		curr = curr->next;
-	tmp = curr;
-	curr->pre->next = NULL;
-	tmp->pre = NULL;
-	ft_lstadd_front(lst, tmp);
+	n = count_depth(*stack_a, num);
+	if (n >= 0 && n <= 2)
+	{
+		while ((*stack_a)->index != num)
+			ra(stack_a);
+	}
+	else if (n > 2)
+	{
+		while ((*stack_a)->index != num)
+			rra(stack_a);
+	}
+	pb(stack_a, stack_b);
 	return ;
 }
