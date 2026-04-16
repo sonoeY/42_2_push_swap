@@ -6,19 +6,12 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 17:13:18 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:52:17 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 // #include <stdio.h>
-
-// bool	is_space(char c)
-// {
-// 	if (c == ' ')
-// 		return (true);
-// 	return (false);
-// }
 
 int	count_tokens(char **s, int arg_total)
 {

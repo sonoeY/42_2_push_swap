@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 17:13:18 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:01:08 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_list
 	int				index;
 }					t_list;
 
-t_list				*parse_args(char **arg_value, int arg_total,
+t_list				*parse_args(char **value, int tokens_total,
 						t_list **stack_a);
 int					count_tokens(char **s, int arg_total);
 bool				is_numeric_token(char *tokens);
@@ -47,8 +47,6 @@ void				pb(t_list **stack_a, t_list **stack_b);
 void				ra(t_list **stack_a);
 void				rra(t_list **stack_a);
 void				pa(t_list **stack_b, t_list **stack_a);
-// void				sb(t_list **stack_b);
-//void				rb(t_list **stack_b);
 void				swap_node(t_list **lst);
 void				push_node(t_list **lst_from, t_list **lst_to);
 void				rotate_up(t_list **lst);
@@ -70,7 +68,7 @@ bool				is_sign(char c);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstadd_last(t_list **lst, t_list *new);
-void				free_lst(t_list **lst);
+void				free_lsts(t_list **lst);
 int					print_error(int fd);
 
 #endif

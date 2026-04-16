@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 21:21:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2025/11/13 12:53:00 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 18:42:12 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static size_t	start_p(const char *s, size_t str_i, char c)
 	return (0);
 }
 
-static char	**free_all(char	**result)
+static char	**free_all_return(char	**result)
 {
 	size_t	i;
 
@@ -96,7 +96,7 @@ char	**ft_split(char const *s, char c)
 	{
 		result[word_i] = make_term(s, str_i, c);
 		if (result[word_i] == NULL)
-			return (free_all(result));
+			return (free_all_return(result));
 		str_i = start_p(s, str_i, c);
 		word_i++;
 	}

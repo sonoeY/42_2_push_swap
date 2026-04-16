@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 17:30:28 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/16 18:39:24 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 // 	}
 // 	return ;
 // }
+//[add below to (f)main]
+//printf("================\n");
+//print_index_forward(stack_a);
 
 int	main(int argc, char **argv)
 {
@@ -40,8 +43,6 @@ int	main(int argc, char **argv)
 	size_a = ft_lstsize(stack_a);
 	if ((ft_lstsize(stack_a) != 1) && (!is_sorted(stack_a)))
 		sort_lst(&stack_a, &stack_b, size_a);
-	//printf("================\n");
-	//print_index_forward(stack_a);
-	free_lst(&stack_a);
+	free_lsts(&stack_a);
 	return (0);
 }
