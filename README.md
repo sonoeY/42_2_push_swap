@@ -1,24 +1,72 @@
 *This project has been created as part of the 42 curriculum by soyamagu.*
 
 # Description
-//clearly presents the project, including its goal and a brief overview
+The **push_swap** is a project that **sorts integers using two stacks** and a limited set of operations, **minimizing the number of instructions**.
+
 
 # Instructions
-any relevant information about [compilation],[installation], and/or [execution]
 
-checker useage
+## Compilation
+### create executable
+```
+# create executable
+ make
 
-if the permission is denied
-```
-chmod 777 ./checker_linux
-```
-```
-ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
+# re-create executable
+ make re
+
+# remove object files
+ make clean
+
+# remove object files and executable
+ make fclean
 ```
 
-# Resources
-- listing classic references related to the topic (documentation, articles, tutorials, etc.)
-- description of how AI was used specifying for which tasks and which parts of the project.
+## Execution
+```
+./push_swap "1 2 3"
+```
+### Error Handling
+- program outputs `Error` in the following cases:
+```
+# empty argument
+./push_swap
+./push_swap ""
 
-# Additional sections
-(e.g., usage examples, feature list, technical choices, etc.).
+# non-integer values
+./push_swap "1 2 3 h"
+
+# integer overflow
+./push_swap "1 2 3 -2147483649"
+
+# duplicate values
+./push_swap "1 2 3 2"
+```
+
+## Checker Usage
+- Download the appropriate checker binary for your OS into the root directory.
+- If permission is denied:
+```
+chmod 777 ./checker_<your OS>
+```
+- Example
+```
+ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_<your OS> $ARG
+```
+
+
+# Algorithm Choices
+Different strategies are applied depending on input size:
+
+- 3 elements: hardcoded minimal combinations
+- 2 elements: simple swap `sa`
+- 4–5 elements: reduce to 3 elements, sort, then reinsert
+- 6+ elements: radix sort (binary-based)
+
+The radix sort operates on indexed values (after coordinate compression) and processes bits from least significant to most significant.
+
+
+# References
+- [Stack and Queue concepts](https://qiita.com/drken/items/6a95b57d2e374a3d3292)
+- [Radix sort explanation](https://tukumolog.com/radix-sort-introduction/)
+- Linked list functions (libft bonus PDF)
