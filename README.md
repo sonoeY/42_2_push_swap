@@ -1,7 +1,7 @@
 *This project has been created as part of the 42 curriculum by soyamagu.*
 
 # Description
-The **push_swap** is a project that **sorts integers using two stacks** and a limited set of operations, **minimizing the number of instructions**.
+The <font color="Red">**push_swap**</font> is a project that <font color="Red">**sorts integers using two stacks**</font> and a limited set of operations, <font color="Red">**minimizing the number of instructions**</font>.
 
 
 # Instructions
