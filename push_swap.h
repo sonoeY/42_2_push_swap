@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 19:01:08 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/18 20:10:08 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "42_0_libft/libft.h"
+# include "libft/libft.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-// # include "libft/source_libft/libft.h"
-// # include "libft/ft_printf.h"
 
 # define BIT_MAX 9
 # define SPACE ' '

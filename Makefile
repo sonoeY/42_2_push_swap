@@ -1,5 +1,5 @@
-# LIBFT = libft/libft.a
-LIBFT 		= 42_0_libft/libft.a
+# LIBFT 		= 42_0_libft/libft.a
+LIBFT 		= libft/libft.a
 NAME		= push_swap
 INC			= -I.
 LIB_PS		= libft_ps.a
@@ -28,16 +28,16 @@ $(LIB_PS): $(OBJS) $(LIBFT)
 	ar rcs $(LIB_PS) $(OBJS)
 
 $(LIBFT):
-	make -C 42_0_libft
-# 	make -C libft
+	make -C libft
+# 	make -C 42_0_libft
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
 	rm -f $(OBJS) $(LIB_PS)
-	make -C 42_0_libft fclean
-# 	make -C libft fclean
+	make -C libft fclean
+# 	make -C 42_0_libft fclean
 
 fclean: clean
 	rm -f $(NAME)
