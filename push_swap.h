@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/19 20:42:08 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/19 21:16:09 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ typedef struct s_list
 }					t_list;
 
 // parse and validations
-t_list				*parse_args(char **value, int tokens_total,
+t_list				*parse_args(char **value, size_t tokens_total,
 						t_list **stack_a);
 int					count_tokens(char **s, int arg_total);
-bool				check_char_num(char **tokens);
+bool				check_char_num(char *tokens);
 bool				check_dup(t_list *lst);
 long long			ft_atol_ps(const char *nptr);
 t_list				*gen_node(long long num);

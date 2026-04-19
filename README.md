@@ -70,3 +70,21 @@ The radix sort operates on indexed values (after coordinate compression) and pro
 - [Stack and Queue concepts](https://qiita.com/drken/items/6a95b57d2e374a3d3292)
 - [Radix sort explanation](https://tukumolog.com/radix-sort-introduction/)
 - Linked list functions (libft bonus PDF)
+
+## Use of AI
+AI tools were used with the following objectives:
+
+[understanding logic]
+- clarifying parsing logic and sorting rules handling
+- optimizing and validating sorting algorithm design
+- visualizing sorting processes for deeper understanding
+
+[error handling]
+- verifying potential risks (e.g., memory leaks)
+- identifying gaps between design assumptions and implementation results
+
+[get any hint for code structuring]
+- giving guidance on how to divide functions
+
+[support language]
+- assisting in README structuring

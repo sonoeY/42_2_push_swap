@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/19 20:35:43 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/19 21:32:23 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ static int			append_tokens(char **tokens, t_list **lst);
 static void			free_tokens(char **tokens);
 static void			*cleanup_error(char **tokens, t_list **lst);
 
-t_list	*parse_args(char **args, int tokens_total, t_list **stack_a)
+t_list	*parse_args(char **args, size_t tokens_total, t_list **stack_a)
 {
 	size_t		tokens_i;
 	char		**tokens;
 	int			result;
 
 	tokens_i = 0;
-	while (tokens_i < (size_t)tokens_total)
+	while (tokens_i < tokens_total)
 	{
 		tokens = split_check_arg(args[tokens_i]);
 		if (!tokens)
@@ -45,15 +45,21 @@ t_list	*parse_args(char **args, int tokens_total, t_list **stack_a)
 
 static char	**split_check_arg(char *arg)
 {
-	char		**tokens;
+	char	**tokens;
+	size_t	i;
 
 	tokens = ft_split(arg, SPACE);
 	if (!tokens)
 		return (NULL);
-	if (!check_char_num(tokens))
+	i = 0;
+	while (tokens[i])
 	{
-		free_tokens(tokens);
-		return (NULL);
+		if (!check_char_num(tokens[i]))
+		{
+			free_tokens(tokens);
+			return (NULL);
+		}
+		i++;
 	}
 	return (tokens);
 }

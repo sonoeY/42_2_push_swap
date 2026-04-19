@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 17:52:17 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/19 21:29:46 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include <stdio.h>
 
 int	count_tokens(char **s, int arg_total)
 {
@@ -36,12 +35,12 @@ int	count_tokens(char **s, int arg_total)
 	return (tokens);
 }
 
-bool	is_numeric_token(char *tokens)
+bool	check_char_num(char *tokens)
 {
 	size_t	i;
 
 	i = 0;
-	if (!tokens || !tokens[i])
+	if (!tokens)
 		return (false);
 	while (tokens[i])
 	{
@@ -92,7 +91,7 @@ t_list	*gen_node(long long num)
 	return (new);
 }
 
-bool	is_lst_dup(t_list *lst)
+bool	check_dup(t_list *lst)
 {
 	t_list	*curr;
 	t_list	*cmp;
