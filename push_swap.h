@@ -6,7 +6,7 @@
 /*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/18 20:10:08 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/19 20:42:08 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-
 # define BIT_MAX 9
 # define SPACE ' '
 
@@ -30,16 +29,16 @@ typedef struct s_list
 	int				index;
 }					t_list;
 
+// parse and validations
 t_list				*parse_args(char **value, int tokens_total,
 						t_list **stack_a);
 int					count_tokens(char **s, int arg_total);
-bool				is_numeric_token(char *tokens);
-bool				is_lst_dup(t_list *lst);
+bool				check_char_num(char **tokens);
+bool				check_dup(t_list *lst);
 long long			ft_atol_ps(const char *nptr);
 t_list				*gen_node(long long num);
 
-void				compress_data(t_list **lst);
-
+// sort rules
 void				sa(t_list **stack_a);
 void				pb(t_list **stack_a, t_list **stack_b);
 void				ra(t_list **stack_a);
@@ -50,6 +49,7 @@ void				push_node(t_list **lst_from, t_list **lst_to);
 void				rotate_up(t_list **lst);
 void				rotate_down(t_list **lst);
 
+// sort argorithm
 void				sort_lst(t_list **stack_a, t_list **stack_b, int size_a);
 void				sort_three(t_list **lst);
 void				sort_four(t_list **stack_a, t_list **stack_b);
@@ -62,11 +62,15 @@ int					count_depth(t_list *lst, int num);
 void				execute_num(t_list **stack_a, t_list **stack_b, int num);
 int					find_bit_max(t_list *lst);
 
+// utils
 bool				is_sign(char c);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstadd_last(t_list **lst, t_list *new);
 void				free_lsts(t_list **lst);
-int					print_error(int fd);
+
+// functions assist main
+void				compress_data(t_list **lst);
+int					escape_error(int fd);
 
 #endif

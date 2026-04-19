@@ -12,7 +12,7 @@ SRCS		= \
 			src/sort/sort_helper.c \
 			src/sort/rules.c \
 			src/sort/rules_helper.c \
-			src/print_error.c \
+			src/escape_error.c \
 			src/utils.c
 OBJS		= $(SRCS:.c=.o)
 CC			= cc

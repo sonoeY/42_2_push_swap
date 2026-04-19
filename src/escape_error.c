@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 19:03:16 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 19:03:31 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/19 20:34:51 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	print_error(int fd)
+int	escape_error(int fd)
 {
 	write(fd, "Error\n", 6);
 	return (1);

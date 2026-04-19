@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 18:39:24 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/19 20:34:51 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
-		return (print_error(2));
+		return (escape_error(2));
 	stack_a = parse_args(argv + 1, argc - 1, &stack_a);
 	if (!stack_a)
-		return (print_error(2));
+		return (escape_error(2));
 	compress_data(&stack_a);
 	size_a = ft_lstsize(stack_a);
 	if ((ft_lstsize(stack_a) != 1) && (!is_sorted(stack_a)))

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_helper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:43:58 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 17:37:48 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/19 20:36:28 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include <stdio.h>
 
 //validation before sorting
 bool	is_sorted(t_list *lst)

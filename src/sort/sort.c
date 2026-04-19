@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:31:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 17:29:30 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/19 20:43:49 by sonoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include <stdio.h>
 
 void	sort_three(t_list **lst);
 void	sort_four(t_list **stack_a, t_list **stack_b);
