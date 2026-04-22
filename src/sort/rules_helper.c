@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_helper.c                                      :+:      :+:    :+:   */
+/*   rules_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 17:00:00 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/16 11:42:32 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_node(t_list **lst)
+void	swap_node(t_node **lst)
 {
-	t_list	*first;
-	t_list	*sec;
-	t_list	*trd;
+	t_node	*first;
+	t_node	*sec;
+	t_node	*trd;
 
 	if (!*lst || !(*lst)->next)
 		return ;
@@ -33,9 +33,9 @@ void	swap_node(t_list **lst)
 	return ;
 }
 
-void	push_node(t_list **lst_from, t_list **lst_to)
+void	push_node(t_node **lst_from, t_node **lst_to)
 {
-	t_list	*a_head;
+	t_node	*a_head;
 
 	if (!*lst_from)
 		return ;
@@ -53,10 +53,10 @@ void	push_node(t_list **lst_from, t_list **lst_to)
 	return ;
 }
 
-void	rotate_up(t_list **lst)
+void	rotate_up(t_node **lst)
 {
-	t_list	*curr;
-	t_list	*tmp;
+	t_node	*curr;
+	t_node	*tmp;
 
 	if (!*lst || !(*lst)->next)
 		return ;
@@ -72,10 +72,10 @@ void	rotate_up(t_list **lst)
 	return ;
 }
 
-void	rotate_down(t_list **lst)
+void	rotate_down(t_node **lst)
 {
-	t_list	*curr;
-	t_list	*tmp;
+	t_node	*curr;
+	t_node	*tmp;
 
 	if (!*lst || !(*lst)->next)
 		return ;

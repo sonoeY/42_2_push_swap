@@ -6,22 +6,22 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:56:12 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/13 19:16:57 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*find_unidx(t_list *lst);
-static t_list	*find_min(t_list *lst);
+static t_node	*find_unidx(t_node *lst);
+static t_node	*find_min(t_node *lst);
 
-void	compress_data(t_list **lst)
+void	compress_data(t_node **lst)
 {
-	t_list	*lst_min;
+	t_node	*lst_min;
 	int		size;
 	int		i;
 
-	if (!lst)
+	if (!lst || !*lst)
 		return ;
 	size = ft_lstsize(*lst);
 	lst_min = *lst;
@@ -35,9 +35,9 @@ void	compress_data(t_list **lst)
 	return ;
 }
 
-static t_list	*find_unidx(t_list *lst)
+static t_node	*find_unidx(t_node *lst)
 {
-	t_list	*curr;
+	t_node	*curr;
 
 	if (!lst)
 		return (NULL);
@@ -51,10 +51,10 @@ static t_list	*find_unidx(t_list *lst)
 	return (NULL);
 }
 
-static t_list	*find_min(t_list *lst)
+static t_node	*find_min(t_node *lst)
 {
-	t_list	*curr;
-	t_list	*lst_min;
+	t_node	*curr;
+	t_node	*lst_min;
 
 	if (!lst)
 		return (NULL);

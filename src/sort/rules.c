@@ -1,62 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_rules.c                                       :+:      :+:    :+:   */
+/*   rules.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 21:55:02 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/16 17:11:38 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/22 08:44:02 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_list **stack_a)
+void	sa(t_node **stack_a)
 {
 	swap_node(stack_a);
 	write(1, "sa\n", 3);
 	return ;
 }
 
-void	pa(t_list **stack_b, t_list **stack_a)
+void	pa(t_node **stack_b, t_node **stack_a)
 {
 	push_node(stack_b, stack_a);
 	write(1, "pa\n", 3);
 	return ;
 }
 
-void	pb(t_list **stack_a, t_list **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
 	push_node(stack_a, stack_b);
 	write(1, "pb\n", 3);
 	return ;
 }
 
-void	ra(t_list **stack_a)
+void	ra(t_node **stack_a)
 {
 	rotate_up(stack_a);
 	write(1, "ra\n", 3);
 	return ;
 }
 
-void	rra(t_list **stack_a)
+void	rra(t_node **stack_a)
 {
 	rotate_down(stack_a);
 	write(1, "rra\n", 4);
 	return ;
 }
 
-// void	sb(t_list **stack_b)
-// {
-// 	swap_node(stack_b);
-// 	write(1, "sb\n", 3);
-// 	return ;
-// }
-
-// void	rb(t_list **stack_b)
-// {
-// 	rotate_up(stack_b);
-// 	write(1, "rb\n", 3);
-// 	return ;
-// }

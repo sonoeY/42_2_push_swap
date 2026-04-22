@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/19 21:29:46 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ long long	ft_atol_ps(const char *nptr)
 	return (sign * num);
 }
 
-t_list	*gen_node(long long num)
+t_node	*gen_node(long long num)
 {
-	t_list	*new;
+	t_node	*new;
 
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_node));
 	if (!new)
 		return (NULL);
 	new->data = (int)num;
@@ -91,10 +91,10 @@ t_list	*gen_node(long long num)
 	return (new);
 }
 
-bool	check_dup(t_list *lst)
+bool	check_dup(t_node *lst)
 {
-	t_list	*curr;
-	t_list	*cmp;
+	t_node	*curr;
+	t_node	*cmp;
 
 	curr = lst;
 	while (curr)

@@ -1,10 +1,10 @@
-# LIBFT 		= 42_0_libft/libft.a
-LIBFT 		= libft/libft.a
+LIBFT_DIR	= libft
+LIBFT		= $(LIBFT_DIR)/libft.a
 NAME		= push_swap
 INC			= -I.
-LIB_PS		= libft_ps.a
-MAIN 		= main.c
+
 SRCS		= \
+			main.c \
 			src/parse/parse.c \
 			src/parse/parse_helper.c \
 			src/compress_data.c \
@@ -14,34 +14,34 @@ SRCS		= \
 			src/sort/rules_helper.c \
 			src/escape_error.c \
 			src/utils.c
+
 OBJS		= $(SRCS:.c=.o)
 CC			= cc
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(MAIN) $(LIB_PS)
-	$(CC) $(CFLAGS) $(MAIN) $(LIB_PS) -o $(NAME)
+$(NAME): $(OBJS) libft_copy
+	$(CC) $(CFLAGS) $(OBJS) libft.a -o $(NAME)
 
-$(LIB_PS): $(OBJS) $(LIBFT)
-	cp -f $(LIBFT) $(LIB_PS)
-	ar rcs $(LIB_PS) $(OBJS)
+libft_copy: $(LIBFT)
+	cp $(LIBFT) ./libft.a
 
 $(LIBFT):
-	make -C libft
-# 	make -C 42_0_libft
+	make -C $(LIBFT_DIR)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(LIB_PS)
-	make -C libft fclean
-# 	make -C 42_0_libft fclean
+	rm -f $(OBJS)
+	rm -f libft.a
+	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
+	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft_copy

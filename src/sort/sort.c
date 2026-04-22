@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:31:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/19 20:43:49 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/22 09:00:17 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_list **lst);
-void	sort_four(t_list **stack_a, t_list **stack_b);
-void	sort_five(t_list **stack_a, t_list **stack_b);
-void	sort_radix(t_list **stack_a, t_list **stack_b, int size_a);
+static void	sort_three(t_node **lst);
+static void	sort_four(t_node **stack_a, t_node **stack_b);
+static void	sort_five(t_node **stack_a, t_node **stack_b);
+static void	sort_radix(t_node **stack_a, t_node **stack_b, int size_a);
 
-void	sort_lst(t_list **stack_a, t_list **stack_b, int size_a)
+void	sort_lsts(t_node **stack_a, t_node **stack_b, int size_a)
 {
-	if (!stack_a || !*stack_a || (!stack_a && !stack_b))
+	if (!stack_a || !*stack_a)
 		return ;
 	if (size_a == 2)
 		sa(stack_a);
@@ -29,12 +29,12 @@ void	sort_lst(t_list **stack_a, t_list **stack_b, int size_a)
 		sort_four(stack_a, stack_b);
 	else if (size_a == 5)
 		sort_five(stack_a, stack_b);
-	if (size_a >= 6)
+	else if (size_a >= 6)
 		sort_radix(stack_a, stack_b, size_a);
 	return ;
 }
 
-void	sort_three(t_list **lst)
+static void	sort_three(t_node **lst)
 {
 	int	min;
 	int	mid;
@@ -62,20 +62,20 @@ void	sort_three(t_list **lst)
 	return ;
 }
 
-void	sort_four(t_list **stack_a, t_list **stack_b)
+static void	sort_four(t_node **stack_a, t_node **stack_b)
 {
 	int	min;
 
 	if (!stack_a || !*stack_a)
 		return ;
 	min = check_min(*stack_a);
-	execute_num(stack_a, stack_b, min);
+	move_to_b(stack_a, stack_b, min);
 	if (!is_sorted(*stack_a))
 		sort_three(stack_a);
 	pa(stack_b, stack_a);
 }
 
-void	sort_five(t_list **stack_a, t_list **stack_b)
+static void	sort_five(t_node **stack_a, t_node **stack_b)
 {
 	int	min;
 	int	mid;
@@ -84,21 +84,21 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 		return ;
 	min = check_min(*stack_a);
 	mid = min + 1;
-	execute_num(stack_a, stack_b, min);
-	execute_num(stack_a, stack_b, mid);
+	move_to_b(stack_a, stack_b, min);
+	move_to_b(stack_a, stack_b, mid);
 	if (!is_sorted(*stack_a))
 		sort_three(stack_a);
 	pa(stack_b, stack_a);
 	pa(stack_b, stack_a);
 }
 
-void	sort_radix(t_list **stack_a, t_list **stack_b, int size_a)
+static void	sort_radix(t_node **stack_a, t_node **stack_b, int size_a)
 {
 	int	max;
 	int	i;
 	int	size_b;
 
-	max = find_bit_max(*stack_a);
+	max = find_bit_max(size_a);
 	i = 0;
 	while (i <= max)
 	{

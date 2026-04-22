@@ -1,7 +1,12 @@
 *This project has been created as part of the 42 curriculum by soyamagu.*
 
 # Description
-The <font color="Red">**push_swap**</font> is a project that <font color="Red">**sorts integers using two stacks**</font> and a limited set of operations, <font color="Red">**minimizing the number of instructions**</font>.
+<font color="Green">**Push swap**</font> is a project that sorts integers using two stacks and a limited set of operations, with the number of instructions as small as possible.
+
+### Brief Summary
+The goal of this project is to sort a list of integers in ascending order in stack a by using two stacks (a and b) and a limited set of operations.
+
+The program does not output the sorted numbers. Instead, it outputs the list of instructions used to sort them, and the number of operations should be as small as possible.
 
 
 # Instructions

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   sort_helper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:43:58 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/19 20:36:28 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/22 09:02:11 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //validation before sorting
-bool	is_sorted(t_list *lst)
+bool	is_sorted(t_node *lst)
 {
-	t_list	*curr;
+	t_node	*curr;
 
 	curr = lst;
 	while (curr->next)
@@ -28,9 +28,9 @@ bool	is_sorted(t_list *lst)
 }
 
 //check min index from three nodes
-int	check_min(t_list *lst)
+int	check_min(t_node *lst)
 {
-	t_list	*curr;
+	t_node	*curr;
 	int		min;
 
 	curr = lst;
@@ -45,7 +45,7 @@ int	check_min(t_list *lst)
 }
 
 //execute the smallest index in stack_a to stack_b
-void	execute_num(t_list **stack_a, t_list **stack_b, int num)
+void	move_to_b(t_node **stack_a, t_node **stack_b, int num)
 {
 	int	n;
 
@@ -67,9 +67,9 @@ void	execute_num(t_list **stack_a, t_list **stack_b, int num)
 }
 
 //check the depth from top node
-int	count_depth(t_list *lst, int num)
+int	count_depth(t_node *lst, int num)
 {
-	t_list	*curr;
+	t_node	*curr;
 	int		n;
 
 	if (!lst)
@@ -87,19 +87,14 @@ int	count_depth(t_list *lst, int num)
 }
 
 //check the max number of bit
-int	find_bit_max(t_list *lst)
+int	find_bit_max(int size_a)
 {
 	int	n;
 	int	i;
-	int	max;
 
-	n = ft_lstsize(lst) - 1;
-	i = 1;
-	while (i <= BIT_MAX)
-	{
-		if ((n >> i & 1) == 1)
-			max = i;
+	n = (size_a - 1);
+	i = 0;
+	while (n >> i)
 		i++;
-	}
-	return (max);
+	return (i - 1);
 }

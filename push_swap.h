@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonoe <sonoe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/19 21:16:09 by sonoe            ###   ########.fr       */
+/*   Updated: 2026/04/22 09:00:59 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define BIT_MAX 9
 # define SPACE ' '
 
 typedef struct s_list
@@ -27,50 +26,45 @@ typedef struct s_list
 	struct s_list	*next;
 	int				data;
 	int				index;
-}					t_list;
+}					t_node;
 
-// parse and validations
-t_list				*parse_args(char **value, size_t tokens_total,
-						t_list **stack_a);
+// functions for parse and validations
+t_node				*parse_args(char **value, size_t tokens_total,
+						t_node **stack_a);
 int					count_tokens(char **s, int arg_total);
 bool				check_char_num(char *tokens);
-bool				check_dup(t_list *lst);
+bool				check_dup(t_node *lst);
 long long			ft_atol_ps(const char *nptr);
-t_list				*gen_node(long long num);
+t_node				*gen_node(long long num);
 
-// sort rules
-void				sa(t_list **stack_a);
-void				pb(t_list **stack_a, t_list **stack_b);
-void				ra(t_list **stack_a);
-void				rra(t_list **stack_a);
-void				pa(t_list **stack_b, t_list **stack_a);
-void				swap_node(t_list **lst);
-void				push_node(t_list **lst_from, t_list **lst_to);
-void				rotate_up(t_list **lst);
-void				rotate_down(t_list **lst);
+// functions define sort rules
+void				sa(t_node **stack_a);
+void				pb(t_node **stack_a, t_node **stack_b);
+void				ra(t_node **stack_a);
+void				rra(t_node **stack_a);
+void				pa(t_node **stack_b, t_node **stack_a);
+void				swap_node(t_node **lst);
+void				push_node(t_node **lst_from, t_node **lst_to);
+void				rotate_up(t_node **lst);
+void				rotate_down(t_node **lst);
 
-// sort argorithm
-void				sort_lst(t_list **stack_a, t_list **stack_b, int size_a);
-void				sort_three(t_list **lst);
-void				sort_four(t_list **stack_a, t_list **stack_b);
-void				sort_five(t_list **stack_a, t_list **stack_b);
-void				sort_radix(t_list **stack_a, t_list **stack_b,
-						int size_a);
-bool				is_sorted(t_list *lst);
-int					check_min(t_list *lst);
-int					count_depth(t_list *lst, int num);
-void				execute_num(t_list **stack_a, t_list **stack_b, int num);
-int					find_bit_max(t_list *lst);
+// functions help sorting
+void				sort_lsts(t_node **stack_a, t_node **stack_b, int size_a);
+bool				is_sorted(t_node *lst);
+int					check_min(t_node *lst);
+int					count_depth(t_node *lst, int num);
+void				move_to_b(t_node **stack_a, t_node **stack_b, int num);
+int					find_bit_max(int size_a);
 
 // utils
 bool				is_sign(char c);
-int					ft_lstsize(t_list *lst);
-void				ft_lstadd_front(t_list **lst, t_list *new);
-void				ft_lstadd_last(t_list **lst, t_list *new);
-void				free_lsts(t_list **lst);
+int					ft_lstsize(t_node *lst);
+void				ft_lstadd_front(t_node **lst, t_node *new);
+void				ft_lstadd_last(t_node **lst, t_node *new);
+void				free_lsts(t_node **lst);
 
 // functions assist main
-void				compress_data(t_list **lst);
+void				compress_data(t_node **lst);
 int					escape_error(int fd);
 
 #endif
