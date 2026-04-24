@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/25 02:46:04 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/25 05:11:36 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void				ft_lstadd_last(t_node **lst, t_node *new);
 void				free_lsts(t_node **lst);
 
 // functions assist main and write error
-void				compress_data(t_node **lst);
+void				compress_num(t_node **lst);
 int					escape_error(int fd);
 void				exit_error(t_node **stack_a, t_node **stack_b);
 

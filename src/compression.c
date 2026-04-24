@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compress_data.c                                    :+:      :+:    :+:   */
+/*   compress_num.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:56:12 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/25 05:08:28 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_node	*find_unidx(t_node *lst);
+// static t_node	*find_unidx(t_node *lst);
 static t_node	*find_min(t_node *lst);
 
-void	compress_data(t_node **lst)
+void	compress_num(t_node **lst)
 {
 	t_node	*lst_min;
 	int		size;
@@ -35,21 +35,21 @@ void	compress_data(t_node **lst)
 	return ;
 }
 
-static t_node	*find_unidx(t_node *lst)
-{
-	t_node	*curr;
+// static t_node	*find_unidx(t_node *lst)
+// {
+// 	t_node	*curr;
 
-	if (!lst)
-		return (NULL);
-	curr = lst;
-	while (curr)
-	{
-		if (curr->index < 0)
-			return (curr);
-		curr = curr->next;
-	}
-	return (NULL);
-}
+// 	if (!lst)
+// 		return (NULL);
+// 	curr = lst;
+// 	while (curr)
+// 	{
+// 		if (curr->index < 0)
+// 			return (curr);
+// 		curr = curr->next;
+// 	}
+// 	return (NULL);
+// }
 
 static t_node	*find_min(t_node *lst)
 {
@@ -58,11 +58,11 @@ static t_node	*find_min(t_node *lst)
 
 	if (!lst)
 		return (NULL);
-	curr = find_unidx(lst);
-	lst_min = curr;
+	lst_min = NULL;
 	while (curr)
 	{
-		if ((curr->index < 0) && (curr->data < lst_min->data))
+		if ((curr->index < 0)
+			&& (!lst_min || (curr->data < lst_min->data)))
 			lst_min = curr;
 		curr = curr->next;
 	}

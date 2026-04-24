@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:19:21 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/22 08:52:28 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/25 05:11:36 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	stack_a = parse_args((argv + 1), (size_t)(argc - 1), &stack_a);
 	if (!stack_a)
 		return (escape_error(2));
-	compress_data(&stack_a);
+	compress_num(&stack_a);
 	size_a = ft_lstsize(stack_a);
 	if ((ft_lstsize(stack_a) != 1) && (!is_sorted(stack_a)))
 		sort_lsts(&stack_a, &stack_b, size_a);
