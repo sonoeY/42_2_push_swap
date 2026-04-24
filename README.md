@@ -71,7 +71,8 @@ Different strategies are applied depending on input size:
 The radix sort operates on indexed values (after coordinate compression) and processes bits from least significant to most significant.
 
 
-# References
+# Resources
+## References
 - [Stack and Queue concepts](https://qiita.com/drken/items/6a95b57d2e374a3d3292)
 - [Radix sort explanation](https://tukumolog.com/radix-sort-introduction/)
 - Linked list functions (libft bonus PDF)
