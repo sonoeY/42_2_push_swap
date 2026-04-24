@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 19:03:16 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/24 20:33:21 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 22:50:08 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	exit_error(t_node **stack_a, t_node **stack_b)
 		free_lsts(stack_a);
 	if (stack_b)
 		free_lsts(stack_b);
-	exit (2);
+	exit (1);
 }
