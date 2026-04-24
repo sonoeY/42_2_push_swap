@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:43:58 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/22 09:02:11 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 20:19:30 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ void	move_to_b(t_node **stack_a, t_node **stack_b, int num)
 	if (n >= 0 && n <= 2)
 	{
 		while ((*stack_a)->index != num)
-			ra(stack_a);
+			ra(stack_a, stack_b);
 	}
 	else if (n > 2)
 	{
 		while ((*stack_a)->index != num)
-			rra(stack_a);
+			rra(stack_a, stack_b);
 	}
 	pb(stack_a, stack_b);
 	return ;

@@ -4,14 +4,14 @@ NAME		= push_swap
 INC			= -I.
 
 SRCS		= \
-			main.c \
+			src/main.c \
 			src/parse/parse.c \
 			src/parse/parse_helper.c \
-			src/compress_data.c \
 			src/sort/sort.c \
 			src/sort/sort_helper.c \
 			src/sort/rules.c \
 			src/sort/rules_helper.c \
+			src/compress_data.c \
 			src/escape_error.c \
 			src/utils.c
 

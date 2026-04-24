@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 17:00:00 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 20:31:04 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,23 @@ void	swap_node(t_node **lst)
 	return ;
 }
 
-void	push_node(t_node **lst_from, t_node **lst_to)
+void	push_node(t_node **src, t_node **dst)
 {
-	t_node	*a_head;
+	t_node	*head;
 
-	if (!*lst_from)
+	if (!*src)
 		return ;
-	a_head = *lst_from;
-	a_head->pre = NULL;
-	if (!a_head->next)
-		*lst_from = NULL;
+	head = *src;
+	head->pre = NULL;
+	if (!head->next)
+		*src = NULL;
 	else
 	{
-		*lst_from = a_head->next;
-		(*lst_from)->pre = NULL;
+		*src = head->next;
+		(*src)->pre = NULL;
 	}
-	a_head->next = NULL;
-	ft_lstadd_front(lst_to, a_head);
+	head->next = NULL;
+	ft_lstadd_front(dst, head);
 	return ;
 }
 

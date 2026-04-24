@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 19:53:51 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	count_tokens(char **s, int arg_total)
 	return (tokens);
 }
 
-bool	check_char_num(char *tokens)
+bool	check_digit(char *tokens)
 {
 	size_t	i;
 

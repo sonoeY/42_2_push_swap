@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 19:53:51 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	**split_check_arg(char *arg)
 	i = 0;
 	while (tokens[i])
 	{
-		if (!check_char_num(tokens[i]))
+		if (!check_digit(tokens[i]))
 		{
 			free_tokens(tokens);
 			return (NULL);

@@ -6,13 +6,13 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:31:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/22 09:00:17 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 20:17:58 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	sort_three(t_node **lst);
+static void	sort_three(t_node **stack_a, t_node **stack_b);
 static void	sort_four(t_node **stack_a, t_node **stack_b);
 static void	sort_five(t_node **stack_a, t_node **stack_b);
 static void	sort_radix(t_node **stack_a, t_node **stack_b, int size_a);
@@ -22,9 +22,9 @@ void	sort_lsts(t_node **stack_a, t_node **stack_b, int size_a)
 	if (!stack_a || !*stack_a)
 		return ;
 	if (size_a == 2)
-		sa(stack_a);
+		sa(stack_a, stack_b);
 	else if (size_a == 3)
-		sort_three(stack_a);
+		sort_three(stack_a, stack_b);
 	else if (size_a == 4)
 		sort_four(stack_a, stack_b);
 	else if (size_a == 5)
@@ -34,30 +34,30 @@ void	sort_lsts(t_node **stack_a, t_node **stack_b, int size_a)
 	return ;
 }
 
-static void	sort_three(t_node **lst)
+static void	sort_three(t_node **stack_a, t_node **stack_b)
 {
 	int	min;
 	int	mid;
 
-	if (!lst || !(*lst)->next || !(*lst)->next->next)
+	if (!stack_a || !(*stack_a)->next || !(*stack_a)->next->next)
 		return ;
-	min = check_min(*lst);
+	min = check_min(*stack_a);
 	mid = min + 1;
-	if ((*lst)->index == min)
+	if ((*stack_a)->index == min)
 	{
-		sa(lst);
-		ra(lst);
+		sa(stack_a, stack_b);
+		ra(stack_a, stack_b);
 	}
-	else if (((*lst)->index == mid) && ((*lst)->next->index == min))
-		sa(lst);
-	else if (((*lst)->index == mid) && ((*lst)->next->index != min))
-		rra(lst);
-	else if (((*lst)->index > mid) && ((*lst)->next->index == min))
-		ra(lst);
-	else if (((*lst)->index > mid) && ((*lst)->next->index != min))
+	else if (((*stack_a)->index == mid) && ((*stack_a)->next->index == min))
+		sa(stack_a, stack_b);
+	else if (((*stack_a)->index == mid) && ((*stack_a)->next->index != min))
+		rra(stack_a, stack_b);
+	else if (((*stack_a)->index > mid) && ((*stack_a)->next->index == min))
+		ra(stack_a, stack_b);
+	else if (((*stack_a)->index > mid) && ((*stack_a)->next->index != min))
 	{
-		sa(lst);
-		rra(lst);
+		sa(stack_a, stack_b);
+		rra(stack_a, stack_b);
 	}
 	return ;
 }
@@ -71,7 +71,7 @@ static void	sort_four(t_node **stack_a, t_node **stack_b)
 	min = check_min(*stack_a);
 	move_to_b(stack_a, stack_b, min);
 	if (!is_sorted(*stack_a))
-		sort_three(stack_a);
+		sort_three(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
 
@@ -87,7 +87,7 @@ static void	sort_five(t_node **stack_a, t_node **stack_b)
 	move_to_b(stack_a, stack_b, min);
 	move_to_b(stack_a, stack_b, mid);
 	if (!is_sorted(*stack_a))
-		sort_three(stack_a);
+		sort_three(stack_a, stack_b);
 	pa(stack_b, stack_a);
 	pa(stack_b, stack_a);
 }
@@ -107,7 +107,7 @@ static void	sort_radix(t_node **stack_a, t_node **stack_b, int size_a)
 			if (((*stack_a)->index >> i & 1) == 0)
 				pb(stack_a, stack_b);
 			else
-				ra(stack_a);
+				ra(stack_a, stack_b);
 			size_a--;
 		}
 		size_b = ft_lstsize(*stack_b);
