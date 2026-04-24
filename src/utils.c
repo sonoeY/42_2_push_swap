@@ -6,13 +6,13 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/22 08:43:24 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 22:40:01 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	is_sign(char c)
+bool	is_sign(int c)
 {
 	if (c == '+' || c == '-')
 		return (true);

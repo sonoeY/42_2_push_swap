@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/24 19:53:51 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 22:46:47 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ bool	check_digit(char *tokens)
 		return (false);
 	while (tokens[i])
 	{
-		if ((i == 0 && is_sign(tokens[i]))
-			&& !ft_isdigit(tokens[i + 1]))
+		if ((i == 0 && is_sign(tokens[i])) && !ft_isdigit(tokens[i + 1]))
 			return (false);
 		else if (!(is_sign(tokens[i]) || ft_isdigit(tokens[i])))
 			return (false);
@@ -54,11 +53,12 @@ bool	check_digit(char *tokens)
 	return (true);
 }
 
-long long	ft_atol_ps(const char *nptr)
+bool	check_overflow(const char *nptr)
 {
-	long	num;
-	long	sign;
-	size_t	i;
+	long long	num;
+	long long	sign;
+	long long	d;
+	size_t		i;
 
 	num = 0;
 	sign = 1;
@@ -69,12 +69,16 @@ long long	ft_atol_ps(const char *nptr)
 			sign = sign * -1;
 		i++;
 	}
-	while (ft_isdigit(nptr[i]) == 1)
+	while (nptr[i] && ft_isdigit(nptr[i]) == 1)
 	{
-		num = (num * 10) + (nptr[i] - '0');
+		d = nptr[i] - '0';
+		if (((sign == 1) && (num > (INT_MAX - d) / 10))
+			|| ((sign == -1) && (num < (INT_MIN + d) / 10)))
+			return (true);
+		num = (num * 10) + (sign * d);
 		i++;
 	}
-	return (sign * num);
+	return (false);
 }
 
 t_node	*gen_node(long long num)
@@ -87,7 +91,7 @@ t_node	*gen_node(long long num)
 	new->data = (int)num;
 	new->index = -1;
 	new->pre = NULL;
-	new ->next = NULL;
+	new->next = NULL;
 	return (new);
 }
 

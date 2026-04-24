@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/24 20:32:33 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 22:40:16 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_node				*parse_args(char **value, size_t tokens_total,
 int					count_tokens(char **s, int arg_total);
 bool				check_digit(char *tokens);
 bool				check_dup(t_node *lst);
-long long			ft_atol_ps(const char *nptr);
+bool				check_overflow(const char *nptr);
 t_node				*gen_node(long long num);
 
 // functions define sort rules
@@ -57,7 +57,7 @@ void				move_to_b(t_node **stack_a, t_node **stack_b, int num);
 int					find_bit_max(int size_a);
 
 // utils
-bool				is_sign(char c);
+bool				is_sign(int c);
 int					ft_lstsize(t_node *lst);
 void				ft_lstadd_front(t_node **lst, t_node *new);
 void				ft_lstadd_last(t_node **lst, t_node *new);

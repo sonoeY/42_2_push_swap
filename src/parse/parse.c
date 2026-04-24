@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/24 19:53:51 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/24 22:45:19 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ static int	append_tokens(char **tokens, t_node **lst)
 	i = 0;
 	while (tokens[i])
 	{
-		num = ft_atol_ps(tokens[i]);
-		if (num > INT_MAX || num < INT_MIN)
+		if (check_overflow(tokens[i]))
 			return (-1);
+		num = ft_atoi(tokens[i]);
 		new_node = gen_node(num);
 		if (!new_node)
 			return (-1);
