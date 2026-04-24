@@ -1,8 +1,6 @@
-LIBFT_DIR	= libft
-LIBFT		= $(LIBFT_DIR)/libft.a
+LIBFT		= libft/libft.a
 NAME		= push_swap
 INC			= -I.
-
 SRCS		= \
 			src/main.c \
 			src/parse/parse.c \
@@ -14,34 +12,29 @@ SRCS		= \
 			src/compress_data.c \
 			src/exit_error.c \
 			src/utils.c
-
 OBJS		= $(SRCS:.c=.o)
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS) libft_copy
-	$(CC) $(CFLAGS) $(OBJS) libft.a -o $(NAME)
-
-libft_copy: $(LIBFT)
-	cp $(LIBFT) ./libft.a
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	make -C libft
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
-	rm -f libft.a
-	make -C $(LIBFT_DIR) clean
+	make -C libft clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
+	make -C libft fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re libft_copy
+.PHONY: all clean fclean re
