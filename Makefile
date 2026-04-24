@@ -12,7 +12,7 @@ SRCS		= \
 			src/sort/rules.c \
 			src/sort/rules_helper.c \
 			src/compress_data.c \
-			src/escape_error.c \
+			src/exit_error.c \
 			src/utils.c
 
 OBJS		= $(SRCS:.c=.o)
