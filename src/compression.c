@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// static t_node	*find_unidx(t_node *lst);
 static t_node	*find_min(t_node *lst);
 
 void	compress_num(t_node **lst)
@@ -34,22 +33,6 @@ void	compress_num(t_node **lst)
 	}
 	return ;
 }
-
-// static t_node	*find_unidx(t_node *lst)
-// {
-// 	t_node	*curr;
-
-// 	if (!lst)
-// 		return (NULL);
-// 	curr = lst;
-// 	while (curr)
-// 	{
-// 		if (curr->index < 0)
-// 			return (curr);
-// 		curr = curr->next;
-// 	}
-// 	return (NULL);
-// }
 
 static t_node	*find_min(t_node *lst)
 {
