@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules.c                                            :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 21:55:02 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/24 23:10:55 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:36:14 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	sa(t_node **stack_a, t_node **stack_b)
 	ret = write(1, "sa\n", 3);
 	if (ret < 0)
 		exit_error(stack_a, stack_b);
-	return ;
 }
 
 void	pa(t_node **stack_b, t_node **stack_a)
@@ -31,7 +30,6 @@ void	pa(t_node **stack_b, t_node **stack_a)
 	ret = write(1, "pa\n", 3);
 	if (ret < 0)
 		exit_error(stack_a, stack_b);
-	return ;
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
@@ -42,7 +40,6 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	ret = write(1, "pb\n", 3);
 	if (ret < 0)
 		exit_error(stack_a, stack_b);
-	return ;
 }
 
 void	ra(t_node **stack_a, t_node **stack_b)
@@ -53,7 +50,6 @@ void	ra(t_node **stack_a, t_node **stack_b)
 	ret = write(1, "ra\n", 3);
 	if (ret < 0)
 		exit_error(stack_a, stack_b);
-	return ;
 }
 
 void	rra(t_node **stack_a, t_node **stack_b)
@@ -64,5 +60,4 @@ void	rra(t_node **stack_a, t_node **stack_b)
 	ret = write(1, "rra\n", 4);
 	if (ret < 0)
 		exit_error(stack_a, stack_b);
-	return ;
 }

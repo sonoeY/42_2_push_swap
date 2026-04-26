@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:23:06 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/25 02:46:04 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:25:09 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ t_node	*parse_args(char **args, size_t tokens_total, t_node **stack_a)
 	char		**tokens;
 	int			result;
 
-	if (!args)
-		return (NULL);
 	tokens_i = 0;
 	while (tokens_i < tokens_total)
 	{

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules_helper.c                                     :+:      :+:    :+:   */
+/*   operations_helper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 17:00:00 by sonoe             #+#    #+#             */
-/*   Updated: 2026/04/24 20:31:04 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:36:37 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	swap_node(t_node **lst)
 	sec->next = first;
 	first->pre = sec;
 	*lst = sec;
-	return ;
 }
 
 void	push_node(t_node **src, t_node **dst)
@@ -50,7 +49,6 @@ void	push_node(t_node **src, t_node **dst)
 	}
 	head->next = NULL;
 	ft_lstadd_front(dst, head);
-	return ;
 }
 
 void	rotate_up(t_node **lst)
@@ -69,7 +67,6 @@ void	rotate_up(t_node **lst)
 	curr->next = tmp;
 	tmp->pre = curr;
 	tmp->next = NULL;
-	return ;
 }
 
 void	rotate_down(t_node **lst)
@@ -86,5 +83,4 @@ void	rotate_down(t_node **lst)
 	curr->pre->next = NULL;
 	tmp->pre = NULL;
 	ft_lstadd_front(lst, tmp);
-	return ;
 }

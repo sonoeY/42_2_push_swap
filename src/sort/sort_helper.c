@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 11:43:58 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/24 20:19:30 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:37:23 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	move_to_b(t_node **stack_a, t_node **stack_b, int num)
 			rra(stack_a, stack_b);
 	}
 	pb(stack_a, stack_b);
-	return ;
 }
 
 //check the depth from top node

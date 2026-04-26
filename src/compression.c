@@ -31,7 +31,6 @@ void	compress_num(t_node **lst)
 		lst_min->index = i;
 		i++;
 	}
-	return ;
 }
 
 static t_node	*find_min(t_node *lst)

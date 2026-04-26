@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:31:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/24 20:17:58 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:37:08 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	sort_lsts(t_node **stack_a, t_node **stack_b, int size_a)
 		sort_five(stack_a, stack_b);
 	else if (size_a >= 6)
 		sort_radix(stack_a, stack_b, size_a);
-	return ;
 }
 
 static void	sort_three(t_node **stack_a, t_node **stack_b)
@@ -59,7 +58,6 @@ static void	sort_three(t_node **stack_a, t_node **stack_b)
 		sa(stack_a, stack_b);
 		rra(stack_a, stack_b);
 	}
-	return ;
 }
 
 static void	sort_four(t_node **stack_a, t_node **stack_b)

@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 10:22:54 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/24 22:40:01 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:37:50 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	ft_lstadd_front(t_node **lst, t_node *new)
 		(*lst)->pre = new;
 	}
 	*lst = new;
-	return ;
 }
 
 void	ft_lstadd_last(t_node **lst, t_node *new)
