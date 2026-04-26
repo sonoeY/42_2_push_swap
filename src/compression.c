@@ -59,6 +59,7 @@ static t_node	*find_min(t_node *lst)
 	if (!lst)
 		return (NULL);
 	lst_min = NULL;
+	curr = lst;
 	while (curr)
 	{
 		if ((curr->index < 0)

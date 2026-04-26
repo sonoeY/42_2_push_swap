@@ -7,9 +7,9 @@ SRCS		= \
 			src/parse/parse_helper.c \
 			src/sort/sort.c \
 			src/sort/sort_helper.c \
-			src/sort/rules.c \
-			src/sort/rules_helper.c \
-			src/compress_data.c \
+			src/sort/operations.c \
+			src/sort/operations_helper.c \
+			src/compression.c \
 			src/exit_error.c \
 			src/utils.c
 OBJS		= $(SRCS:.c=.o)
