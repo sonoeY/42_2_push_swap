@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/25 02:46:04 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/26 18:53:39 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,17 @@ bool	check_char_num(char *tokens)
 	size_t	i;
 
 	i = 0;
-	if (!tokens)
-		return (false);
+	if (is_sign(tokens[i]))
+	{
+		if (tokens[i + 1] == '\0' || !ft_isdigit(tokens[i + 1]))
+			return (false);
+		i++;
+	}
 	while (tokens[i])
 	{
-		if ((i == 0 && is_sign(tokens[i])) && !ft_isdigit(tokens[i + 1]))
+		if (i != 0 && is_sign(tokens[i]))
 			return (false);
-		else if (!(is_sign(tokens[i]) || ft_isdigit(tokens[i])))
+		else if (!ft_isdigit(tokens[i]))
 			return (false);
 		i++;
 	}
