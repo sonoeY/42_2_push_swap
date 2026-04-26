@@ -52,8 +52,14 @@ pa
 ```
 
 ## Execution
+
+The program accepts the following input formats:
 ```
-$ ./push_swap "1 2 3"
+$ ./push_swap "2 1 3"
+
+$ ./push_swap "2 1" 3
+
+$ ./push_swap 2 1 3
 ```
 ### Error Handling
 
@@ -96,7 +102,6 @@ Different strategies are applied depending on input size:
 
 The radix sort operates on indexed values (after coordinate compression) and processes bits from least significant to most significant.
 
-# Concept of Complexity
 
 # Resources
 ### References
