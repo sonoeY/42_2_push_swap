@@ -6,34 +6,34 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 18:12:19 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/26 18:53:39 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/28 02:11:31 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	count_tokens(char **s, int arg_total)
-{
-	size_t	i;
-	size_t	j;
-	size_t	tokens;
+// int	count_tokens(char **s, int arg_total)
+// {
+// 	size_t	i;
+// 	size_t	j;
+// 	size_t	tokens;
 
-	i = 0;
-	tokens = 0;
-	while (i < (size_t)arg_total)
-	{
-		j = 0;
-		while (s[i][j])
-		{
-			if ((j == 0 && !(s[i][j] == SPACE))
-				|| (j > 0 && !(s[i][j] == SPACE) && (s[i][j - 1] == SPACE)))
-				tokens++;
-			j++;
-		}
-		i++;
-	}
-	return (tokens);
-}
+// 	i = 0;
+// 	tokens = 0;
+// 	while (i < (size_t)arg_total)
+// 	{
+// 		j = 0;
+// 		while (s[i][j])
+// 		{
+// 			if ((j == 0 && !(s[i][j] == SPACE))
+// 				|| (j > 0 && !(s[i][j] == SPACE) && (s[i][j - 1] == SPACE)))
+// 				tokens++;
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (tokens);
+// }
 
 bool	check_char_num(char *tokens)
 {

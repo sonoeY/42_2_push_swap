@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 05:23:18 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/26 12:42:09 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/28 02:11:36 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_list
 // parse.c, parse_helper.c
 t_node				*parse_args(char **value, size_t tokens_total,
 						t_node **stack_a);
-int					count_tokens(char **s, int arg_total);
+// int					count_tokens(char **s, int arg_total);
 bool				check_char_num(char *tokens);
 bool				check_dup(t_node *lst);
 bool				check_overflow(const char *nptr);

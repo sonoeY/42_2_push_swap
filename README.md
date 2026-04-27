@@ -9,7 +9,7 @@ Instead of printing the sorted values, the program outputs the sequence of instr
 
 ### Operations
 
-This program uses the following operations:
+This implementation uses the following operations:
 
 - <font color="Green">**sa**</font> (swap a): Swap the first 2 elements at the top of stack a. Do nothing if there is only one element or none.
 
@@ -36,24 +36,23 @@ pa
 # Instructions
 
 ## Compilation
-### create executable
 ```
-# create executable
+# create executable file
  $ make
 
-# re-create executable
+# re-create executable file
  $ make re
 
 # remove object files
  $ make clean
 
-# remove object files and executable
+# remove object files and executable file
  $ make fclean
 ```
 
 ## Execution
 
-The program accepts the following input formats:
+The implementation accepts the following input formats:
 ```
 $ ./push_swap "2 1 3"
 
@@ -95,8 +94,8 @@ $ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_<your OS> $ARG
 # Algorithm Choices
 Different strategies are applied depending on input size:
 
-- 3 elements: hardcoded minimal combinations
 - 2 elements: simple swap `sa`
+- 3 elements: hardcoded minimal combinations
 - 4–5 elements: reduce to 3 elements, sort, then reinsert
 - 6+ elements: radix sort (binary-based)
 

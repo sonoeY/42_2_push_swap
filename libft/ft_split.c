@@ -6,7 +6,7 @@
 /*   By: soyamagu <soyamagu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 21:21:00 by soyamagu          #+#    #+#             */
-/*   Updated: 2026/04/16 18:42:12 by soyamagu         ###   ########.fr       */
+/*   Updated: 2026/04/27 21:09:33 by soyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static char	*make_term(const char *str, unsigned int str_i, char c)
 	while (str[str_i + len] != '\0' && str[str_i + len] != c)
 		len++;
 	term = ft_substr(str, str_i, len);
+	if (!term)
+		return (NULL);
 	return (term);
 }
 
